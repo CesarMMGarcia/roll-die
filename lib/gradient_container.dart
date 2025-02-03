@@ -1,29 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:roll_die/die_roller.dart';
 
 const startAlignment = Alignment.topLeft;
 const endAlignment = Alignment.bottomRight;
 
 class GradientContainer extends StatelessWidget {
-  GradientContainer(this.colors, {super.key});
+  const GradientContainer(this.colors, {super.key});
 
   final List<Color> colors;
-
-  var currentDieValue = "assets/images/dice-1.png";
-
-  void rollDie() {
-    currentDieValue = "assets/images/dice-2.png";
-    print("im running!");
-  }
 
   @override
   Widget build(context) {
     return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-            colors: colors, begin: startAlignment, end: endAlignment),
-      ),
-      child: Center(
-          child:
-    );
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+              colors: colors, begin: startAlignment, end: endAlignment),
+        ),
+        child: const Center(child: DieRoller()));
   }
 }
